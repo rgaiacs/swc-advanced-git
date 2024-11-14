@@ -42,6 +42,35 @@ git merge --no-ff <branch> -m "Message"
 
 The `--no-ff` flag causes the merge to always create a new commit object, even if the merge could be performed with a fast-forward. This avoids losing information about the historical existence of a feature branch and groups together all commits that together added the feature.
 
+## Exercise: Creating a non-fast-forwad merge.
+
+> Create a new Git repository that has the following tree.
+>
+> ~~~
+> *   69fac81 (main) Merge branch 'gitignore'
+> |\  
+> | * 5537012 (gitignore) Add .gitignore
+> |/  
+> * 6ec7c0f Add README
+> ~~~
+> 
+> > ## Solution
+> > ~~~
+> > git init
+> > touch README.md
+> > git add README.md
+> > git commit -m 'Add README'
+> > git checkout -b gitignore
+> > touch .gitignore
+> > git add .gitignore
+> > git commit -m "Add .gitignore"
+> > git checkout main
+> > git merge --no-ff gitignore
+> > ~~~
+> > {: .language-bash}
+> {: .solution}
+{: .challenge}
+
 ## Fast-forward Merge
 
 If there are no conflicts with the main branch, a "fast-forward" merge can be executed with. This will NOT create a merge commit! Aborts merge if it cannot be done.
