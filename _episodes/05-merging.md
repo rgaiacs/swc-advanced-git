@@ -82,9 +82,27 @@ git merge --ff-only <branch>
 ~~~
 {: .language-bash}
 
-Using the fast-forward merge it is impossible to see from the `git` history which of the commit objects together have implemented a feature. You would have to manually read all the log messages. Reverting a whole feature (i.e. a group of commits), is a true headache in the latter situation, whereas it is easily done if the --no-ff flag was used.
+If using the fast-forward merge, it is impossible to see from the `git` history which of the commit objects together have implemented a feature. You would have to manually read all the log messages. Reverting a whole feature (i.e. a group of commits), is a true headache in the latter situation, whereas it is easily done if the --no-ff flag was used.
 
 For a good illustration of fast-forward merge (and other concepts), see this thread: https://stackoverflow.com/questions/9069061/what-effect-does-the-no-ff-flag-have-for-git-merge
+
+## Exercise: Creating a fast-forwad merge.
+
+> Consider the following Git tree
+>
+> ~~~
+> * a78b99f (main) Add title
+> | * 3d88062 (remote) Add .gitignore
+> |/  
+> * 86c4247 Add README
+> ~~~
+> 
+> Is possible to run a fast-forward merge to incorporate the branch `remote` into `main`?
+> > ## Solution
+> > It is not possible to run a fast-forward merge because of commit `a78b99f`. 
+> > {: .language-bash}
+> {: .solution}
+{: .challenge}
 
 ### Three-way Merge
 
