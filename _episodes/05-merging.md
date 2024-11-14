@@ -11,15 +11,15 @@ keypoints:
 - "`git merge --ff-only` is a good way to pull down changes from remote"
 ---
 
-Even if you live well, one day you will have to merge a branch. Your branch may or may not have diverged from the main branch. The command that accomplishes this is `git merge`.
+When you are collaborating, you will have to merge a branch independent if your branch may or may not have diverged from the main branch. Most of the Git hosting platform like GiHub or GitLab allows you to merge a branch from their web interface but you can also merge the branches from your machine using `git merge`.
 
-There are 3 ways to merge:
+There are 2 ways to merge:
 
 - non-fast-forward merged (recommended)
 
 - fast forward merged
 
-- three way
+![Merging diagram.](../fig/09-merging.png)
 
 Reminder: when starting work on a new feature, be careful where you branch from!
 
@@ -29,8 +29,6 @@ git fetch upstream
 git checkout -b develop upstream/develop
 ~~~
 {: .language-bash}
-
-![Merging 1](../fig/09-merging.png)
 
 ## Non-fast-forwad Merge
 
